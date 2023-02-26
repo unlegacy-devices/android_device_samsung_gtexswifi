@@ -1,1 +1,1 @@
-add_lunch_combo omni_gtexswifi-eng
+add_lunch_combo omni_j3x3g-eng

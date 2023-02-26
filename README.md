@@ -1,23 +1,20 @@
-## TWRP device tree for Galaxy Tab A 7.0 - SM-T280 (gtexswifi)
+# Device Tree for Samsung Galaxy J3 (2016) (j3x3g)
 
-Add to `.repo/local_manifests/gtexswifi.xml`:
+Copyright 2023, TeamWin Recovery Project
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<manifest>
-	<project path="device/samsung/gtexswifi" name="underscoremone/android_device_samsung_gtexswifi" remote="github" revision="android-6.0" />
-</manifest>
-```
+The Samsung Galaxy J3 (2016) (codenamed _"j3x3g"_) is a budget smartphone from Samsung.
+It was released in May 2016.
 
-Then run `repo sync` to check it out.
-
-To build:
-
-```sh
-. build/envsetup.sh
-lunch omni_gtexswifi-eng
-make -j5 recoveryimage
-```
-
-Kernel sources are available at: https://github.com/underscoremone/android_kernel_samsung_gtexswifi/tree/cm-14.1
-
+|                   Basic | Spec Sheet                                                    |
+| ----------------------: | :------------------------------------------------------------ |
+| Chipset                 | Spreadtrum SC7730SW                                           |
+| CPU                     | Dual-core 1.3 GHz Cortex-A7                                   |
+| GPU                     | Mali-400MP2                                                   |
+| RAM                     | 1 GB                                                          |
+| Storage                 | 8/16 GB                                                       |
+| Battery                 | Li-Ion 2600 mAh                                               |
+| Dimensions              | 142.3 x 71 x 7.9 mm                                           |
+| Display                 | Super AMOLED, 720 x 1280 pixels, 5.0 inches 				  |
+| Rear camera             | 8 MP, (f/2.2, 31mm (standard), AF), LED flash                 |
+| Front camera            | 2 MP, No flash                                                |
+| Shipped Android Version | 5.1.1                                                         |
