@@ -28,8 +28,9 @@ BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 -
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16777216
 BOARD_FLASH_BLOCK_SIZE := 131072
 
-TARGET_PREBUILT_KERNEL := $(DEVICE_TREE)/prebuilt/zImage
-TARGET_PREBUILT_DTB := $(DEVICE_TREE)/prebuilt/dtb
+# Kernel
+TARGET_KERNEL_CONFIG   := teamwin_j13g_defconfig
+TARGET_KERNEL_SOURCE   := kernel/samsung/j13g
 
 # Use this flag if the board has a ext4 partition larger than 2gb
 BOARD_HAS_LARGE_FILESYSTEM := true
@@ -56,4 +57,4 @@ RECOVERY_SDCARD_ON_DATA := true
 BOARD_HAS_NO_MISC_PARTITION := true
 
 # Encryption support
-TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_CRYPTO := false
