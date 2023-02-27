@@ -29,8 +29,8 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16777216
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 # Kernel
-TARGET_KERNEL_CONFIG   := teamwin_j13g_defconfig
-TARGET_KERNEL_SOURCE   := kernel/samsung/j13g
+TARGET_KERNEL_CONFIG   := j3x3g-dt_defconfig
+TARGET_KERNEL_SOURCE   := kernel/samsung/j3x3g
 
 # Use this flag if the board has a ext4 partition larger than 2gb
 BOARD_HAS_LARGE_FILESYSTEM := true
