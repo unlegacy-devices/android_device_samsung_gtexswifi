@@ -25,16 +25,6 @@ jobs:
         axel -q -n $(nproc --all) https://download.java.net/openjdk/jdk7u75/ri/openjdk-7u75-b13-linux-x64-18_dec_2014.tar.gz
         tar -xzf openjdk-7u75-b13-linux-x64-18_dec_2014.tar.gz
         sudo ln -f -s /usr/bin/python2.7 /usr/bin/python
-    - name: Removing GCC9 and installing GCC7
-      run: |
-        sudo apt-get remove gcc-9 g++-9
-        sudo apt-get install gcc-7 g++-7 gcc-multilib g++-multilib linux-headers-generic
-        sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 20
-        sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 20
-        sudo update-alternatives --install /usr/bin/cc cc /usr/bin/gcc 20
-        sudo update-alternatives --set cc /usr/bin/gcc
-        sudo update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++ 20
-        sudo update-alternatives --set c++ /usr/bin/g++
         gcc --version
     - name: Syncing TWRP sources
       run: |
@@ -42,7 +32,7 @@ jobs:
         cd ~/TWRP
         mkdir ~/.bin
         curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/.bin/repo
-        python3 ~/.bin/repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-5.1
+        python3 ~/.bin/repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-6.0
         git clone https://github.com/unlegacy-devices/android_device_samsung_j3x3g.git -b android-6.0 ~/TWRP/device/samsung/j3x3g
         git clone https://github.com/NotNoelChannel/android_kernel_samsung_j3x3g -b master2 ~/TWRP/kernel/samsung/j3x3g
         python3 ~/.bin/repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
