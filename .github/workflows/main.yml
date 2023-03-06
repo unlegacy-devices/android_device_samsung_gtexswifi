@@ -45,6 +45,8 @@ jobs:
         cd ~/TWRP
         rm -rf bootable/recovery
         git clone https://github.com/NotNoelChannel/android_bootable_recovery -b android-9.0 ~/TWRP/bootable/recovery
+        rm -rf ~/TWRP/build
+        git clone https://github.com/unlegacy-devices/android_build-13 -b android-6.0 ~/TWRP/build
         source build/envsetup.sh
         export ALLOW_MISSING_DEPENDENCIES=true
         export LC_ALL=C
