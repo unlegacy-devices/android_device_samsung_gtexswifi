@@ -27,7 +27,7 @@ jobs:
         sudo ln -f -s /usr/bin/python2.7 /usr/bin/python
     - name: Removing GCC9 and installing GCC7
       run: |
-        sudo update-alternatives --remove-all gcc-9
+        sudo apt-get remove gcc-9 g++-9
         sudo apt-get install gcc-7 g++-7
         sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 20
         sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 20
