@@ -50,7 +50,7 @@ jobs:
       run: |
         OLDPATH=$PATH
         OLDJAVAHOME=$JAVA_HOME
-        export PATH="$PATH:/usr/bin/gcc"
+        export PATH="$HOME/.jdk_7/java-se-7u75-ri/bin:$PATH"
         export JAVA_HOME="$HOME/.jdk_7/java-se-7u75-ri"
         cd ~/TWRP
         rm -rf bootable/recovery
