@@ -28,7 +28,8 @@ jobs:
     - name: Removing GCC9 and installing GCC7
       run: |
         sudo apt-get remove gcc-9
-        sudo apt-get install gcc-7 g++-7
+        sudo apt-get install gcc-7 g++-7 build-essential
+        gcc --version
     - name: Syncing TWRP sources
       run: |
         mkdir ~/TWRP
