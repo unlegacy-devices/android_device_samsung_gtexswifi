@@ -41,6 +41,8 @@ jobs:
         export PATH="$HOME/.jdk_7/java-se-7u75-ri/bin:$PATH"
         export JAVA_HOME="$HOME/.jdk_7/java-se-7u75-ri"
         cd ~/TWRP
+        rm -rf bootable/recovery
+        git clone https://github.com/NotNoelChannel/android_bootable_recovery -b android-9.0 ~/TWRP/bootable/recovery
         source build/envsetup.sh
         export ALLOW_MISSING_DEPENDENCIES=true
         export LC_ALL=C
