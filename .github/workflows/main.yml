@@ -28,7 +28,7 @@ jobs:
     - name: Removing GCC9 and installing GCC7
       run: |
         sudo apt-get remove gcc-9 g++-9
-        sudo apt-get install gcc-7 g++-7
+        sudo apt-get install gcc-7 g++-7 gcc-multilib g++-multilib linux-headers-generic
         sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 20
         sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 20
         sudo update-alternatives --install /usr/bin/cc cc /usr/bin/gcc 20
