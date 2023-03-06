@@ -27,8 +27,14 @@ jobs:
         sudo ln -f -s /usr/bin/python2.7 /usr/bin/python
     - name: Removing GCC9 and installing GCC7
       run: |
-        sudo apt-get remove gcc-9
-        sudo apt-get install gcc-7 g++-7 build-essential
+        sudo update-alternatives --remove-all gcc 
+        sudo apt-get install gcc-7 g++-7
+        sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 20
+        sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 20
+        sudo update-alternatives --install /usr/bin/cc cc /usr/bin/gcc 20
+        sudo update-alternatives --set cc /usr/bin/gcc
+        sudo update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++ 20
+        sudo update-alternatives --set c++ /usr/bin/g++
         gcc --version
     - name: Syncing TWRP sources
       run: |
@@ -44,7 +50,7 @@ jobs:
       run: |
         OLDPATH=$PATH
         OLDJAVAHOME=$JAVA_HOME
-        export PATH="$HOME/.jdk_7/java-se-7u75-ri/bin:$PATH"
+        export PATH="$PATH:/usr/bin/gcc"
         export JAVA_HOME="$HOME/.jdk_7/java-se-7u75-ri"
         cd ~/TWRP
         rm -rf bootable/recovery
