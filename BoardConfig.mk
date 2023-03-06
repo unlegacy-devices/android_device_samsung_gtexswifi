@@ -29,8 +29,8 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16777216
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 # Kernel
-TARGET_KERNEL_CONFIG   := j3x3g-dt_defconfig
-TARGET_KERNEL_SOURCE   := kernel/samsung/j3x3g
+TARGET_PREBUILT_KERNEL := $(DEVICE_TREE)/prebuilt/zImage
+TARGET_PREBUILT_DTB    := $(DEVICE_TREE)/prebuilt/dtb
 
 # Use this flag if the board has a ext4 partition larger than 2gb
 BOARD_HAS_LARGE_FILESYSTEM := true
@@ -40,13 +40,14 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_TREE)/bootimg.mk
 
 # TWRP specific build flags
-TW_DEVICE_VERSION := 3
+TW_DEVICE_VERSION := 0_notnoelchannel
 TW_FORCE_USE_BUSYBOX := true
 TW_THEME := portrait_hdpi
 TW_HAS_DOWNLOAD_MODE := true
 TW_NO_REBOOT_BOOTLOADER := true
 TW_BRIGHTNESS_PATH := "/sys/devices/gen-panel-backlight.29/backlight/panel/brightness"
 TW_MAX_BRIGHTNESS := 255
+TARGET_RECOVERY_INITRC := $(DEVICE_TREE)/recovery/root/init.rc
 TW_DEFAULT_BRIGHTNESS := 162
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/20200000.usb/gadget/lun0/file"
 TARGET_RECOVERY_FSTAB = $(DEVICE_TREE)/recovery.fstab
