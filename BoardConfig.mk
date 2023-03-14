@@ -49,6 +49,7 @@ TW_MAX_BRIGHTNESS := 255
 TARGET_RECOVERY_INITRC := $(DEVICE_TREE)/recovery/root/init.rc
 TW_DEFAULT_BRIGHTNESS := 162
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/platform/sec-thermistor/temperature"
+TW_MTP_DEVICE := "/dev/mtp_usb"
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/20200000.usb/gadget/lun0/file"
 TARGET_RECOVERY_FSTAB = $(DEVICE_TREE)/recovery.fstab
 TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
