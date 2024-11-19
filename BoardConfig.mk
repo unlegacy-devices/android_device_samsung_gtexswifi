@@ -118,6 +118,7 @@ BOARD_CUSTOM_BOOTIMG_MK := device/samsung/j3x3g/mkbootimg.mk
 BOARD_KERNEL_CMDLINE := console=ttyS1,115200n8 androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
+TARGET_KERNEL_CONFIG := j3x3g-dt_defconfig
 BOARD_MKBOOTIMG_ARGS := --base 0 --pagesize 2048 --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 BOARD_KERNEL_SEPARATED_DT := true
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
