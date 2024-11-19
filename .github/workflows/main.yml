@@ -55,8 +55,7 @@ jobs:
         source build/envsetup.sh
         export ALLOW_MISSING_DEPENDENCIES=true
         export LC_ALL=C
-        lunch lineage_j3x3g-eng
-        make -j$(nproc --all) otapackage
+        brunch j3x3g
         export PATH=$OLDPATH
         export JAVA_HOME=$OLDJAVAHOME
     - name: CD to LineageOS builds
